@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    max-width: 100%;
+}
+body {
+    background-image: linear-gradient(to right bottom, skyblue, rgb(204, 181, 204));
+    color: black;
+    font-family: sans-serif;
+}
+.div-wea {
+    text-align: center;
+    margin: 50px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    margin-top: 20px;
+}
+.btn {
+    padding: 5px;
+    cursor: pointer;
+    background-color: skyblue;
+    width: 100px;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: rgb(46, 153, 196);
+}
