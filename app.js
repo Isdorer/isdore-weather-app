@@ -1,5 +1,5 @@
 const bodyParser = require("body-parser");
-const { query } = require("express");
+
 const express = require("express");
 app = express();
        request = require("request");
@@ -45,7 +45,7 @@ app.get("/results", (req, res) => {
 })
 
 
-app.get("/weather", (req, res) => {
+app.get("/", (req, res) => {
   res.render("weather")
 })
 
