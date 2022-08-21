@@ -14,12 +14,12 @@ app = express();
 app.get("/results", (req, res) => {
     const city = req.query.city;
     
-    request(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=859fe2b3199587f4d4f464aa4bb2c2db`, function (error,response , body){
+    request(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=859fe2b3199587f4d4f464aa4bb2c2db`, function (error,response , body){
         if(error){
             console.log(error)
         } else {
             const weatherData = JSON.parse(body);
-            const temp =  weatherData.main.temp;
+            const temp = Math.floor(weatherData.main.temp);
             const icon =  weatherData.weather[0].icon;
             const country =  weatherData.sys.country;
             const status =  weatherData.wind.speed;
