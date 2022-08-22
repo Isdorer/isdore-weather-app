@@ -1,8 +1,8 @@
 const bodyParser = require("body-parser");
-const DotEnv = require("dotenv").config();
+
 const express = require("express");
 app = express();
-       request = require("request");
+     request = require("request");
        
 
 
@@ -15,8 +15,10 @@ app.get("/results", (req, res) => {
     const city = req.query.city;
     
     request(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=859fe2b3199587f4d4f464aa4bb2c2db`, function (error,response , body){
-        if(error){
-            console.log(error)
+        if(response.statusCode !== 200){
+             res.render("err")
+           console.log(error)
+           
         } else {
             const weatherData = JSON.parse(body);
             const temp = Math.floor(weatherData.main.temp);
