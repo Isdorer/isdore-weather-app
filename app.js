@@ -1,5 +1,5 @@
 const bodyParser = require("body-parser");
-
+const DotEnv = require("dotenv").config();
 const express = require("express");
 app = express();
        request = require("request");
